@@ -5,8 +5,8 @@ window.onload = function () {
   const min = 0;
   const max = 600;
 
-  let  ckeckValue = (x) => {
-    if (x>=min || x<max){
+  let  checkValue = (a) => {
+    if (a>=min || a<=max){
       return true;
     }
     else{
@@ -14,14 +14,20 @@ window.onload = function () {
     }
   };
 
-
-
-
   document.getElementById("go").addEventListener("click", function(){
-    let x =+ prompt("Deffinissez x");
-    let y =+ prompt("Deffinissez y");
-    let a = document.querySelector('#carre').style.left=`${x}px`;
-    let b = document.querySelector('#carre').style.bottom=`${y}px`;
+    let x = prompt("Deffinissez x");
+    let y = prompt("Deffinissez y");
+    if  (x>=min && x<=max && y>=min && y<=max ) {
+      document.querySelector('#carre').style.left=`${x}px`;
+      document.querySelector('#carre').style.bottom=`${y}px`;
+
+    }
+    else{
+      console.log(`%cles valeurs x et y entrées doivent etre comprises entre ${x} et ${y}`,'background-color:red;');
+    }
+
+
+
 
   });
 
