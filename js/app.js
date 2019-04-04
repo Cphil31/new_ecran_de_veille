@@ -4,6 +4,7 @@ window.onload = function () {
 
   const min = 0;
   const max = 600;
+  const cycle = 1000;
 
   let  checkValue = (a) => {
     if (a>=min || a<=max){
@@ -14,6 +15,7 @@ window.onload = function () {
     }
   };
 
+
   document.getElementById("go").addEventListener("click", function(){
     let x = prompt("Deffinissez x");
     let y = prompt("Deffinissez y");
@@ -21,14 +23,20 @@ window.onload = function () {
       document.querySelector('#carre').style.left=`${x}px`;
       document.querySelector('#carre').style.bottom=`${y}px`;
 
+      setInterval(function run (){
+        console.log(x);
+        console.log(y);
+        }, cycle);
+
     }
     else{
       console.log(`%cles valeurs x et y entrées doivent etre comprises entre ${x} et ${y}`,'background-color:red;');
     }
-
-
-
-
   });
+
+
+
+
+
 
 }
